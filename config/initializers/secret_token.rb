@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Kiosk::Application.config.secret_key_base = '666eb274bc3c5b7f7497383f8f42a6ea4e3241bea28eb8964b5bac85b4c5a8be2882c79efe96bfb4476b50259bf5aa8e7210501ec2b98e43e5f7e82f81ba8c62'
+Kiosk::Application.config.secret_token = ENV['SECRET_KEY_BASE']
