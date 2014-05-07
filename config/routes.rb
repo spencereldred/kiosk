@@ -1,10 +1,10 @@
 Kiosk::Application.routes.draw do
   devise_for :users
 
-  root "kiosks#index"
+  root "booths#index"
   #get '/kiosks/:id' => 'kiosks#show'
   
-  get "/kiosks/show" => 'kiosks#show'
+  get "/booths/show" => 'booths#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
