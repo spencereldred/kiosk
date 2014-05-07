@@ -1,4 +1,4 @@
-l# encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140505223612) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kiosks", force: true do |t|
+  create_table "booths", force: true do |t|
     t.string   "name"
     t.string   "street"
     t.string   "city"
