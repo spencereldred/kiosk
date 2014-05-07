@@ -1,0 +1,24 @@
+
+<h1>Kiosk App</h1>
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+   <h2>hey I'm logged in - put stuff here</h2>
+
+   <input type="text" id="inputTextAddress" style=" width:200px" title="Address to Geocode" />
+
+	<div style='width: 800px;'>
+	  <div id="map" style='width: 800px; height: 400px;'></div>
+	</div>
+
+
+
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path %> | 
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+
+
+<%= javascript_include_tag "index" %>

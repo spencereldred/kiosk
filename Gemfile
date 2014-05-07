@@ -49,6 +49,10 @@ end
 
 gem 'devise'
 
+gem 'gmaps4rails'
+
+gem 'underscore-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

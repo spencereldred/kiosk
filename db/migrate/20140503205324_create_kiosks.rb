@@ -1,6 +1,6 @@
-class CreateKiosks < ActiveRecord::Migration
+class CreateBooths < ActiveRecord::Migration
   def change
-    create_table :kiosks do |t|
+    create_table :booths do |t|
       t.string :name
       t.string :street
       t.string :city

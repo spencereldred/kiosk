@@ -1,4 +1,4 @@
-class Kiosks < ActiveRecord::Base
+class Booth < ActiveRecord::Base
   def address
     "#{self.street}, #{self.city}, #{self.state}, #{self.zipcode}"
   end
