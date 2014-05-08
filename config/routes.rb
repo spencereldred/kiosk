@@ -6,6 +6,8 @@ Kiosk::Application.routes.draw do
   
   get "/booths/show" => 'booths#show'
 
+  get "/booths/find_closest" => 'booths#find_closest'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

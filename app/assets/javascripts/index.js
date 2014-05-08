@@ -11,7 +11,8 @@ handler.buildMap({
 	  function(){
 	  	// loop here through data
 	    //    for each item in the data, call handler.addMarkers
-	    markers = handler.addMarkers([
+
+		var markerData = [
 	      {
 	        "lat": 37.7833,
 	        "lng": -122.4167,
@@ -22,7 +23,9 @@ handler.buildMap({
 	        },
 	        "infowindow": "hello!"
 	      }
-	    ]);
+	    ];
+
+	    markers = handler.addMarkers(markerData);
 	    handler.bounds.extendWith(markers);
 	    handler.fitMapToBounds();
 	  }
