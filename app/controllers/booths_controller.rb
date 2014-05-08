@@ -2,12 +2,12 @@ class BoothsController < ApplicationController
   def show
   end
   def find_closest
-     @booths = Booth.all
-  end
+    @pin_location = [params[:latitude],params[:longitude]]
+    @booths = Booth.near(@pin_location, params[:radius])
 
-#   @users = User.all
-#   @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-#   marker.lat user.latitude
-#   marker.lng user.longitude
-# end
+    @booth_markers = Gmaps4rails.build_markers(@booths) do |booth, marker|
+      marker.lat booth.lat
+      marker.lng booth.lng
+    end
+  end
 end

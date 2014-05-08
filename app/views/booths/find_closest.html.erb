@@ -1,6 +1,32 @@
 <h1>kiosks found within your search radius</h1>
-   <ol>
-   <% @booths.each do |booth| %>
-   <li><%= booth.name%><br/></li>
-   <% end %>
-   </ol>
+<ol>
+ <% @booths.each do |booth| %>
+   <li id="booth_<%= booth.id %>"><%= booth.name%></li>
+ <% end %>
+</ol>
+
+
+<div style='width:100%'>
+  <div id="booth_map" style='width: 100%; min-height: 400px;'></div>
+</div>
+<script>
+
+$(document).ready( function() {
+	var handler = Gmaps.build('Google');
+	handler.buildMap
+	(
+		{ 
+			provider: {}, 
+			internal: {id: 'booth_map'}
+		}, 
+		function(){
+	      markers = handler.addMarkers(
+	      	<%=raw @booth_markers.to_json %>
+	      );
+	      handler.bounds.extendWith(markers);
+	      handler.fitMapToBounds();
+	    }
+	);
+});
+
+</script>

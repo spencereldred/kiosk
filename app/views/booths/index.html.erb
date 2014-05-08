@@ -7,10 +7,23 @@
 
    <h1>Enter source location</h1>
    Enter a source location and a radius to search for the closest kiosk.
+<SCRIPT>
+$(document).ready(function(){
+	function display_lat_long(position)
+	{
+		$('#my_latitude').val(position.coords.latitude);
+		$('#my_longitude').val(position.coords.longitude);
+	}
+	navigator.geolocation.getCurrentPosition(display_lat_long);
+});
+</SCRIPT>
+
    <%= form_tag 'booths/find_closest', :method => "get" do %>
    	<%= select_tag 'radius', options_for_select({'1 miles' => 1, '3
-   miles' => 3, '5 miles' => 5}, 1) %>
-   <input type="text" name="address">
+   miles' => 3, '5 miles' => 5, '10 miles' => 10}, 1) %>
+   <input type="text" name="latitude" id="my_latitude">
+   <input type="text" name="longitude" id="my_longitude">
+
    	<%= submit_tag 'find' %>
    <% end %>
 
@@ -24,6 +37,3 @@
   <%= link_to "Sign up", new_user_registration_path %> | 
   <%= link_to "Login", new_user_session_path %>
 <% end %>
-
-
-<%= javascript_include_tag "index" %>

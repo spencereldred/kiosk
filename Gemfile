@@ -53,6 +53,8 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'geocoder'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
