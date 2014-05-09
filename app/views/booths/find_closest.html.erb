@@ -21,7 +21,7 @@ $(document).ready( function() {
 		}, 
 		function(){
 	      markers = handler.addMarkers(
-	      	<%=raw @booth_markers.to_json %>
+	      	<%= raw @booth_markers.to_json %>
 	      );
 	      handler.bounds.extendWith(markers);
 	      handler.fitMapToBounds();
