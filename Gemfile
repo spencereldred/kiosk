@@ -33,6 +33,8 @@ gem 'ym4r', '~> 0.6.1'
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'pry'
 end
 
 group :doc do

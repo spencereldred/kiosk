@@ -5,8 +5,21 @@
   <%= link_to 'Edit profile', edit_user_registration_path %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
+	<% a = 2 %>
+
+	<% if current_user.admin == true %>
+		<!-- <h3>this user has admin rights</h3> -->
+	<% end %>
+
+	<% if a == 1 %>
+		<h3>Show this if a == 1</h3>
+	<% end %>
+
+	<%= current_user.email %>
+
+
    <h1>Enter source location</h1>
-   Enter a source location and a radius to search for the closest kiosk.
+   Enter a source location and select the radius - to search for the closest kiosk.
 <SCRIPT>
 $(document).ready(function(){
 	function display_lat_long(position)
