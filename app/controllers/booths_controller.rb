@@ -1,4 +1,6 @@
 class BoothsController < ApplicationController
+  # Spencer: you should have a before_filter here requiring that 
+  # the user be logged in (i.e. authorization).
   def show
   end
   def find_closest
